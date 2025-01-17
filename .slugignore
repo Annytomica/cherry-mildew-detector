@@ -2,4 +2,5 @@
 *.JPG
 .github/
 inputs/mildew_dataset/
+src/css
 kaggle.json
