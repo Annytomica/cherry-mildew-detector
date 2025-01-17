@@ -1,5 +1,5 @@
 *.ipynb
 *.JPG
 .github/
-inputs/
+inputs/mildew_dataset/
 kaggle.json
