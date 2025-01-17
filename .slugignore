@@ -1,0 +1,5 @@
+*.ipynb
+*.JPG
+.github/
+inputs/
+kaggle.json
