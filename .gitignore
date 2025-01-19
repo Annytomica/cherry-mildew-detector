@@ -6,6 +6,6 @@ __pycache__/
 *.py[cod]
 node_modules/
 .github/
-inputs/mildew_dataset/
+inputs/datasets/
 cloudinary_python.txt
 kaggle.json
