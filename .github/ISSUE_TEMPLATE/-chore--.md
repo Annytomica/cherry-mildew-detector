@@ -2,7 +2,7 @@
 name: "[Chore]:"
 about: Chore Template
 title: "[Chore]:"
-labels: Chore
+labels: chore
 assignees: ''
 
 ---

@@ -2,7 +2,7 @@
 name: "[Task]:"
 about: Task Template
 title: "[Task]:"
-labels: Task
+labels: task
 assignees: ''
 
 ---
