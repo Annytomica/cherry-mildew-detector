@@ -1,10 +1,7 @@
 image:
   file: .gitpod.dockerfile
 tasks:
-  - init: |
-      . ${GITPOD_REPO_ROOT}/.vscode/init_tasks.sh
-      sudo apt-get update && sudo apt-get install -y libgl1
-      python3 -m pip install opencv-python-headless
+  - init: . ${GITPOD_REPO_ROOT}/.vscode/init_tasks.sh
     command: /home/gitpod/.pg_ctl/bin/pg_start > /dev/null
   - command: . ${GITPOD_REPO_ROOT}/.vscode/uptime.sh &
 vscode:
