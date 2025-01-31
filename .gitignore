@@ -11,6 +11,5 @@ outputs/v1/mildew_detector_model.h5
 outputs/v2/mildew_detector_model_v2.h5
 outputs/v3/mildew_detector_model_v3.h5
 outputs/v4/mildew_detector_model_v4.h5
-outputs/v5/mildew_detector_model_v5.h5
 cloudinary_python.txt
 kaggle.json
