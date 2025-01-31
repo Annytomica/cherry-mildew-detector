@@ -1,0 +1,8 @@
+                precision    recall  f1-score   support
+
+       healthy       0.52      0.52      0.52       422
+powdery_mildew       0.52      0.51      0.51       422
+
+      accuracy                           0.52       844
+     macro avg       0.52      0.52      0.52       844
+  weighted avg       0.52      0.52      0.52       844
