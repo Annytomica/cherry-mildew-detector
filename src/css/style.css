@@ -1,0 +1,20 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* General Styles */
+
+/* Add default font for headers */
+h1, [class*="css"] {
+    font-family: "Space Grotesk", serif; 
+    font-weight: 400;
+}
+
+/* Add default font for body text */
+html, body, [class*="css"] {
+    font-family: "Work Sans", serif; 
+    font-weight: 400;
+}
+
+.st-emotion-cache-1rhqrlg {
+    height: 6rem;
+}

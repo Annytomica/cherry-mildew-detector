@@ -17,4 +17,10 @@ app.add_page("Mildew Detection", page_mildew_prediction_body)
 app.add_page("Project Hypotheses", page_project_hypotheses_body)
 app.add_page("Model Performance Metrics", page_model_performance_metrics)
 
+# load style.css for custom styling
+with open( "src/css/style.css" ) as css:
+    st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
+
+st.logo('assets/static/mildew_logo.png', size="large", icon_image='assets/static/mildew_logo_icon.png')
+
 app.run()  # Run the app
