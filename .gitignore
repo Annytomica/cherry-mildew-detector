@@ -6,7 +6,7 @@ __pycache__/
 *.py[cod]
 node_modules/
 .github/
-inputs/datasets/
+inputs/datasets/raw/
 outputs/v1/mildew_detector_model.h5
 outputs/v2/mildew_detector_model_v2.h5
 outputs/v3/mildew_detector_model_v3.h5
