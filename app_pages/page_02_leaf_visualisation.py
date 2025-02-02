@@ -12,6 +12,9 @@ import io
 default_montage_path = "outputs/v1/thumbnail_montage.png"
 montage_dir = "inputs/datasets/montage"
 
+# Initialize session state for montage if not set
+if "current_montage" not in st.session_state:
+    st.session_state["current_montage"] = default_montage_path
 
 # main body content - four toggles for displaying plots
 def page_leaf_visualisation_body():
@@ -21,7 +24,7 @@ def page_leaf_visualisation_body():
 
     one = st.toggle("Show Image Montage", key="montage_toggle")
     if one:
-        st.write("Image Montage activated!")
+        st.subheader("Image Montage")
         display_thumbnail_montage()
 
     two = st.toggle("Show Average and Variability Plots", key="healthy_toggle")
@@ -42,8 +45,6 @@ def page_leaf_visualisation_body():
 
 # Function to display the thumbnail montage
 def display_thumbnail_montage():
-    st.title("Thumbnail Montage")
-
     # Load and check default montage
     if not os.path.exists(default_montage_path):
         st.error("Default montage not found. Please check the file path.")
@@ -52,9 +53,8 @@ def display_thumbnail_montage():
     # Placeholder for the montage
     montage_placeholder = st.empty()
 
-    # Display default montage initially
-    default_montage = Image.open(default_montage_path)
-    montage_placeholder.image(default_montage, caption=" ", use_container_width=True)
+    # Display the current montage from session state
+    montage_placeholder.image(st.session_state["current_montage"], use_container_width=True)
 
     # Button to generate a new montage
     if st.button("Generate New Montage"):
@@ -63,10 +63,13 @@ def display_thumbnail_montage():
                 with st.spinner("🔄 Montage loading..."):
                     new_montage = generate_thumbnail_montage(data_dir=montage_dir, labels=["healthy", "powdery_mildew"], new_size=(150, 150))
 
+                # Save new montage in session state
+                st.session_state["current_montage"] = new_montage
+
                 # Replace with new montage
-                montage_placeholder.image(new_montage, caption="Generated Montage", use_container_width=True)
+                montage_placeholder.image(new_montage, use_container_width=True)
         else:
-            montage_placeholder.image(default_montage, caption="Default Montage", use_container_width=True)
+            montage_placeholder.image(default_montage, use_container_width=True)
             st.warning("Montage dataset not found. Default montage shown.")
 
 # Function to generate thumbnail montage - modified from data visualisation notebook
