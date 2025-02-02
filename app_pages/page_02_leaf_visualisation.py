@@ -20,7 +20,7 @@ if "current_montage" not in st.session_state:
 def page_leaf_visualisation_body():
     st.title('Cherry Leaf Data Visualisation')
     st.subheader('General Information')
-    st.write('summaryleaf visualisation page')
+    st.write('summary of content here')
 
     one = st.toggle("Show Image Montage", key="montage_toggle")
     if one:
