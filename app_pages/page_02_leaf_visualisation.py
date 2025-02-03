@@ -1,5 +1,4 @@
 import streamlit as st
-## Libraries for montage functions
 import os
 import random
 import matplotlib.pyplot as plt
