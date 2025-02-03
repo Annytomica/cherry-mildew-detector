@@ -28,4 +28,21 @@ def page_model_performance_metrics():
     st.write("---")
 
     st.subheader('Model Performance on Test Set')
+    st.write('Test Evaluation')
     st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))
+    # confusion matrix and classification report
+    col1, col2 = st.columns(2)
+    with col1:
+        st.write('Confusion Matrix')
+        cm = plt.imread(f"outputs/{version}/test_confusion_matrix_{version}.png")
+        st.image(cm) 
+    with col2:
+        st.write(' ')
+
+    class_report_path = f"outputs/{version}/classification_report_{version}.txt"
+    with open(class_report_path, "r") as file:
+        class_report = file.read()  # Read the entire text file
+    # Display the file contents with preserved formatting
+    st.write('Classification Report')
+    st.code(class_report, language="text")
+    st.write("---")
