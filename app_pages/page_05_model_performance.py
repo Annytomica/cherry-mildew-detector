@@ -7,14 +7,22 @@ from src.machine_learning.evaluate_model import load_test_evaluation
 def page_model_performance_metrics():
     st.title('ML Model Performance Metrics')
     st.subheader('General Information')
+    st.write('''
+    The ML model is a Convolutional Neural Network (CNN) designed for binary image 
+    classification. It uses Softmax activation for class probability predictions. 
+    The model is compiled using the Adam optimizer and categorical cross-entropy as 
+    the loss function. It has a prediction accuracy of 99.88%.
+    ''')
+    st.write("---")
 
-    # The following code is from CI malaria walkthrough project with minimal changes
+    # The following code is based on CI malaria walkthrough project with addition
+    # of confusion matrix and classification report
     version = 'v5'
 
-    st.subheader('Train, Validation and Test Set: Labels Frequencies')
+    st.subheader('Train, Validation and Test Set: Label Frequencies')
 
     labels_distribution = plt.imread("outputs/v1/labels_distribution.png")
-    st.image(labels_distribution, caption='Labels Distribution on Train, Validation and Test Sets')
+    st.image(labels_distribution)
     st.write("---")
 
     st.subheader('Model Training History')
@@ -28,21 +36,27 @@ def page_model_performance_metrics():
     st.write("---")
 
     st.subheader('Model Performance on Test Set')
-    st.write('Test Evaluation')
+    st.write('**Test Evaluation**')
     st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))
+    
+    st.write(" ")
+    
     # confusion matrix and classification report
     col1, col2 = st.columns(2)
     with col1:
-        st.write('Confusion Matrix')
+        st.write('**Confusion Matrix**')
         cm = plt.imread(f"outputs/{version}/test_confusion_matrix_{version}.png")
         st.image(cm) 
     with col2:
         st.write(' ')
+    
+    st.write(" ")
 
+    # code to display classification report developed with assistance from ChatGPT
     class_report_path = f"outputs/{version}/classification_report_{version}.txt"
     with open(class_report_path, "r") as file:
-        class_report = file.read()  # Read the entire text file
+        class_report = file.read()
     # Display the file contents with preserved formatting
-    st.write('Classification Report')
+    st.write('**Classification Report**')
     st.code(class_report, language="text")
     st.write("---")
