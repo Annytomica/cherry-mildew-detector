@@ -12,15 +12,34 @@ from src.machine_learning.predictive_analysis import (
                                                     )
 
 def page_mildew_prediction_body():
-    st.title('Cherry Mildew Predictor')
+    st.title('Cherry Mildew Detector')
     st.subheader('General Information')
     st.write('''
-    The ML model is a Convolutional Neural Network (CNN) designed for binary image 
-    classification. It uses Softmax activation for class probability predictions. 
-    The model is compiled using the Adam optimizer and categorical cross-entropy as 
-    the loss function. It has an evaluated prediction accuracy of 99.88%.
+    The client is interested in predicting if a cherry leaf is healthy or 
+    infected with powdery mildew. The success metric is a prediction 
+    accuracy of greater than 97%. These requirements were met, with a 
+    classifier model developed with evaluated prediction accuracy of more 
+    than 99%. Details on the model evaluation can be found on the 'Model 
+    Performance Metrics' page.
     ''')
     st.write("---")
+    st.subheader('How to Use:')
+    st.write('''
+    Images of a cherry leaf, in .JPG/.jpeg format, can be uploaded for 
+    evaluation of mildew presence or absence using the file uploader. 
+    Once uploaded the images are automatically evaluated and the predicted
+    health status of the leaf displayed. An evaluation report, in .csv 
+    format, can be downloaded.
+    
+    **Key Points:**
+    - single or multiple images can be uploaded at once
+    - additional images uploaded will be added to the same evaluation report
+    - to reset the evaluation report refresh the page
+    ''')
+    st.write(
+        f"You can download a set of healthy and powdery mildew infected leaf images "
+        f"for live prediction [here](https://www.kaggle.com/codeinstitute/cherry-leaves)."
+        )
 
     #Load Image
     images_buffer = st.file_uploader('Upload cherry leaf images. You may select more than one.',
