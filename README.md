@@ -215,7 +215,23 @@ If you wish to develop this app further, feel free. To do this, create a fork of
 
 ## Main Data Analysis and Machine Learning Libraries
 
-- Here, you should list the libraries used in the project and provide an example(s) of how you used these libraries.
+- **OS**: Used for file and directory path handling
+- **streamlit**: Used extensively for building the UI of streamlit app
+- **numpy**: Examples of use include numerical operations and handling image data (eg. np.array(pil_image))
+- **pandas**: Examples of use include handling dataframes, evaluation reports and structuring prediction probabilities.
+- **matplotlib**: Examples of use include creating the montage layout, saving plots as images and creating fugures with mutliple plots.
+- **seaborn**: For enhanced plot visualisation, such as model training history accuracy and losses line plots, label frequency bar plots
+- **Pillow**: Used for image processing such as resizing, retrieving image properties and image uploading.
+- **joblib**: Examples of use include loading and saving .pkl files.
+- **scikit-learn**: Examples of use include model evaluation such as confusion matrix and classification report.
+- **tensorflow.keras**: Used for building training and testing models and making predictions using model.
+- **keras_tuner**: used for tuning of model hyperparameters
+- **Random**: Used for selecting images randomly from dataset folders
+- **io** – Used for handling in-memory image storage
+- **shutil** - used for organising dataset files
+- **cv2(openCV)** - computer vision package used for leaf orientation functions
+- **datetime** - used for associating date and time for .csv file prediction report generation
+- **base64** - used for handling the prediction report .csv file for download
 
 ## Credits
 
