@@ -12,7 +12,7 @@ We recommend accessing app on streamlit cloud if available as it has faster resp
 
 ## Dataset Content
 
-The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). The dataset consists of XXX .jpeg images, split evenly between 'healthy' and 'powdery_mildew' classes. All images are 256px x 256px.
+The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). The dataset consists of 4208 .jpeg images, split evenly between 'healthy' and 'powdery_mildew' classes. All images are 256px x 256px.
 
 Code Institute then created a fictitious user story for the dataset where predictive analytics can be applied in a real project in the workplace:
 - The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
@@ -66,8 +66,50 @@ Visual differentiation of healthy and infected leaves can be improved by alignin
 
 ## Dashboard Design
 
-- List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
-- Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
+### Page 1: Quick Project Summary
+- General Information
+    - Powdery mildew is an infection caused by the fungus Podosphaera clandestina. It presents as white powdery patches on new or young leaves, with growth typically starting on the underside of the leaf. 
+    - Multiple cherry leaves are collected and visually inspected manually. Visual criteria are used to detect mildew infection. The inspection process takes 30 minutes per tree.
+    - The infection will not kill the leaf but can cause distortion and discolouration. This infection can be transferred to the cherry fruit as they mature, causing damage and losses to the cherry crop.
+- Project Dataset
+    - The dataset provided by the client contains 4208 .jpg images of healthy and powdery-mildew infected cherry leaves taken from their cherry farms.
+    - Link to additional information (Readme file)
+- Business requirements
+    - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
+    - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+
+### Page 2: Cherry Leaf Visualisation
+It will answer business requirements 1
+- Toggle 1 - Image Montage
+- Toggle 2 - Average image and image variability for healthy and mildew infected classes
+- Toggle 3 - Differences between the average images from healthy and mildew infected
+- Toggle 4 - Conclusions of visualisation study
+
+### Page 3: Mildew Detection
+- General information including:
+    - Answers business requirement two - "The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew."
+    - Success metrics - greater than 97% accuracy
+    - ‘How to use’ information for file uploader and predictions
+    - Link to download a set of parasite-contained and uninfected cell images for live prediction.
+- A user interface with a file uploader widget. The user can upload single or multiple cherry leaf images. It will display the image, image details and a prediction statement, indicating if the leaf is healthy or infected with mildew and the probability associated with this statement.
+- Table with the image name and prediction results.
+- Download button to download table.
+
+### Page 4: Project Hypotheses
+- Block for each project hypothesis, description of the conclusion and how it was validated.
+
+### Page 5: Model Performance Metrics
+- General information including:
+    - Model architecture summary
+    - Descriptions of performance metrics
+- Toggle 1 - Label Frequencies for Train, Validation, and Test Sets
+- Toggle 2 - Training History - Accuracy and Losses
+- Toggle 3 - Performance on test set:
+    - Test evaluation
+    - Confusion matrix
+    - Classification report
+- Toggle 4 - conclusions
+
 
 ## Bugs
 
