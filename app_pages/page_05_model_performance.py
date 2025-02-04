@@ -12,6 +12,17 @@ def page_model_performance_metrics():
     classification. It uses Softmax activation for class probability predictions. 
     The model is compiled using the Adam optimizer and categorical cross-entropy as 
     the loss function. It has a prediction accuracy of 99.88%.
+    
+    The performance metrics are:
+    - measurement of label frequencies in train, validation and test sets to assess
+    whether the labels are balanced or unbalanced.
+    - Plots of training accuracy and losses to assess whether model training went as 
+    expected and model peformance improved across epochs.
+    - performance on the test dataset to assess prediction accuracy and whether model
+    is under- or over-fitted to the dataset. This includes:
+        - test evaluation
+        - confusion matrix
+        - classification report
     ''')
     st.write("---")
 
@@ -25,6 +36,11 @@ def page_model_performance_metrics():
 
         labels_distribution = plt.imread("outputs/v1/labels_distribution.png")
         st.image(labels_distribution)
+        st.write('''
+        **Summary:**
+        Labels are balanced. The number of images in each set is small and the training 
+        data required augmentation to address this.
+        ''')
         st.write("---")
 
     two = st.toggle("Show Training History", key="history_toggle")
@@ -37,6 +53,10 @@ def page_model_performance_metrics():
         with col2:
             model_loss = plt.imread(f"outputs/{version}/model_training_losses_{version}.png")
             st.image(model_loss, caption='Model Training Losses')
+        st.write('''
+        **Summary:**
+        Plots show training went as expected and model peformance improved across epochs.
+        ''')
         st.write("---")
 
     three = st.toggle("Show Performance on Test Set", key="performance_toggle")
@@ -65,6 +85,14 @@ def page_model_performance_metrics():
         # Display the file contents with preserved formatting
         st.write('**Classification Report**')
         st.code(class_report, language="text")
+        st.write('''
+        **Summary:**
+        Evaluation shows model fulfilled successs metric with an accuracy of 99.88%. However,
+        the 'perfect scores' of the confusion matrix and classification report indicate the 
+        potential for the model to have over-fitted to the small dataset and model may have 
+        reduced accuracy on new data.
+        ''')
+        
         st.write("---")
     
     four = st.toggle("Show Conclusions", key="metrics_toggle")
