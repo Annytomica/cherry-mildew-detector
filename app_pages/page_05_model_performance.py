@@ -19,44 +19,61 @@ def page_model_performance_metrics():
     # of confusion matrix and classification report
     version = 'v5'
 
-    st.subheader('Train, Validation and Test Set: Label Frequencies')
+    one = st.toggle("Show Label Frequencies", key="label_toggle")
+    if one:
+        st.subheader('Train, Validation and Test Set: Label Frequencies')
 
-    labels_distribution = plt.imread("outputs/v1/labels_distribution.png")
-    st.image(labels_distribution)
-    st.write("---")
+        labels_distribution = plt.imread("outputs/v1/labels_distribution.png")
+        st.image(labels_distribution)
+        st.write("---")
 
-    st.subheader('Model Training History')
-    col1, col2 = st.columns(2)
-    with col1: 
-        model_acc = plt.imread(f"outputs/{version}/model_training_acc_{version}.png")
-        st.image(model_acc, caption='Model Training Accuracy')
-    with col2:
-        model_loss = plt.imread(f"outputs/{version}/model_training_losses_{version}.png")
-        st.image(model_loss, caption='Model Training Losses')
-    st.write("---")
+    two = st.toggle("Show Training History", key="history_toggle")
+    if two:
+        st.subheader('Model Training History')
+        col1, col2 = st.columns(2)
+        with col1: 
+            model_acc = plt.imread(f"outputs/{version}/model_training_acc_{version}.png")
+            st.image(model_acc, caption='Model Training Accuracy')
+        with col2:
+            model_loss = plt.imread(f"outputs/{version}/model_training_losses_{version}.png")
+            st.image(model_loss, caption='Model Training Losses')
+        st.write("---")
 
-    st.subheader('Model Performance on Test Set')
-    st.write('**Test Evaluation**')
-    st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))
+    three = st.toggle("Show Performance on Test Set", key="performance_toggle")
+    if three:
+        st.subheader('Model Performance on Test Set')
+        st.write('**Test Evaluation**')
+        st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))
     
-    st.write(" ")
+        st.write(" ")
     
-    # confusion matrix and classification report
-    col1, col2 = st.columns(2)
-    with col1:
-        st.write('**Confusion Matrix**')
-        cm = plt.imread(f"outputs/{version}/test_confusion_matrix_{version}.png")
-        st.image(cm) 
-    with col2:
-        st.write(' ')
+        # confusion matrix and classification report
+        col1, col2 = st.columns(2)
+        with col1:
+            st.write('**Confusion Matrix**')
+            cm = plt.imread(f"outputs/{version}/test_confusion_matrix_{version}.png")
+            st.image(cm) 
+        with col2:
+            st.write(' ')
     
-    st.write(" ")
+        st.write(" ")
 
-    # code to display classification report developed with assistance from ChatGPT
-    class_report_path = f"outputs/{version}/classification_report_{version}.txt"
-    with open(class_report_path, "r") as file:
-        class_report = file.read()
-    # Display the file contents with preserved formatting
-    st.write('**Classification Report**')
-    st.code(class_report, language="text")
-    st.write("---")
+        # code to display classification report developed with assistance from ChatGPT
+        class_report_path = f"outputs/{version}/classification_report_{version}.txt"
+        with open(class_report_path, "r") as file:
+            class_report = file.read()
+        # Display the file contents with preserved formatting
+        st.write('**Classification Report**')
+        st.code(class_report, language="text")
+        st.write("---")
+    
+    four = st.toggle("Show Conclusions", key="metrics_toggle")
+    if four: 
+        st.subheader('Conclusions')
+        st.write('''
+        The trained model fulfilled business requirement 2 and the success metric of greater
+        than 97% prediction accuracy. However, the study also identified that the small
+        dataset used for model development increased the potential for over-fitting. 
+        Our recommendation is for more data to be collected to ensure the model maintains
+        its high accuracy of prediction on new data.
+        ''')
