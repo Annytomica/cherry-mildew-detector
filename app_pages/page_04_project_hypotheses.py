@@ -39,15 +39,17 @@ def page_project_hypotheses_body():
     
     This was addressed through augmentation of training dataset to increase sample 
     size. Evaluation of model performance indicates that this may not have been 
-    sufficient with a risk of lower accuracy with new data. Collecting additional 
-    image data is recommended.
+    sufficient with a risk of model over-fitting leading to lower accuracy with 
+    new data. Collecting additional image data is recommended.
     ''')
     st.write('''
     **Visual differentiation of healthy and infected leaves can be improved by 
     aligning leaf images in the same orientation**
     
-    Rotating images prior to Average Image, Variability Image and Difference between 
-    Averages studies improved the ability to differentiate healthy from mildew 
-    infected leaves. It was not required for image montage or training of mildew 
-    detection model.
+    Development of functions for rotating images was begun but not completed for 
+    this study. It is not required for the image montage or training of the mildew 
+    detection model which have already fulfilled business requirements 1 and 2. 
+    As such the question of whether aligning leaf images prior to Average Image, 
+    Variability Image and Difference between Averages studies improved the ability 
+    to differentiate healthy from mildew infected leaves was not answered.
     ''')
