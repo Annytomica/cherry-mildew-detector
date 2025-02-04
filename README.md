@@ -54,25 +54,15 @@ Visual differentiation of healthy and infected leaves can be improved by alignin
 
 ## ML Business Case
 
-
-#### Powdery Mildew
-Powdery mildew is an infection caused by the fungus Podosphaera clandestina. It presents as white powdery patches on new or young leaves, with growth typically starting on the underside of the leaf. The infection will not kill the leaf but can cause distortion and discolouration. This infection can be transferred to the cherry fruit as they mature, causing damage and losses to the cherry crop.
-
-
-#### Present Monitoring and Response
-The current management process involves manual verification if a given cherry tree contains powdery mildew. An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If there is powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute. 
-
-
-#### Limitations
-The company has thousands of cherry trees located on multiple farms across the country. As a result, this manual process is not scalable due to the time spent in the manual process inspection.
-
-
-#### Proposed Improvement
-To save time in this process, the IT team suggested an ML system that detects instantly, using a leaf tree image, if it is healthy or has powdery mildew. This would significantly reduce total time to monitor and treat each tree, making large-scale implementation of this process across all farms a realistic possibility.
-
-This study will also act as a pilot. Presently,  similar manual processes are in place for detecting pests on other crops grown by Farmy & Foods. If this initiative is successful, there is a realistic chance to replicate this project for all other crops. 
-
-- In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+### Cherry Mildew Detector
+- We want an ML model to predict if a cherry leaf is infected with powdery mildew or not based on historical image data. It is a supervised model, a 2-class, single-label classification model.
+- Our ideal outcome is to provide the cherry farm workers with a faster and more reliable diagnostic for powdery mildew detection.
+- The model success metrics are:
+    - Accuracy of 97% or above on the test set.
+- The model output is defined as a flag, indicating whether a cherry leaf is healthy or infected with powdery mildew, along with the associated probability. Workers on the farm will use the app to take leaf images in real-time, allowing for immediate assessment and decision-making in the field.
+- Heuristics: The current management process involves manual verification if a given cherry tree contains powdery mildew. An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If there is powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute. The company has thousands of cherry trees located on multiple farms across the country. As a result, this manual process is not scalable due to the time spent in the manual process inspection. Additionally, this process of manual inspection leaves room for human error.
+- The training data to fit the model comes from Kaggle. This dataset contains 4+ thousand images with kaggle datacard not indicating original provenance. 
+    - Train data - target: mildew infected or not; features: all images
 
 ## Dashboard Design
 
