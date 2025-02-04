@@ -34,23 +34,20 @@ def page_mildew_prediction_body():
         for image in images_buffer:
             
             pil_image = (Image.open(image))
-            #this line of code could be problematic
-            #pil_image = image.load_img(image, target_size=image_shape, color_mode='rgb')
-            
-            #Convert image to array and prepare for prediction
-            #my_image = image.img_to_array(pil_image)
+
             version = 'v5'
             img_array = np.array(pil_image)
-            resized_img = resize_input_image(img=pil_image, version=version)
-            #my_image = np.expand_dims(my_image, axis=0) / 255.0                       
+            resized_img = resize_input_image(img=pil_image, version=version)                       
             
             st.info(f"Cherry Leaf Sample: **{image.name}**")
             col1, col2 = st.columns(2)
             with col1: 
-                st.image(pil_image, caption="Uploaded image")
+                st.image(pil_image)
             with col2:
-                st.image(resized_img, caption="Processed image")
-            st.write(f"Uploaded image profile: Image Size: {pil_image.size[1]}px width x {pil_image.size[0]}px height, Image mode: {pil_image.mode}")      
+                st.write("**Uploaded image profile:**")
+                st.write(f"Image Name: {image.name}")        
+                st.write(f"Image Size: {pil_image.size[1]}px width x {pil_image.size[0]}px height")        
+                st.write(f"Image mode: {pil_image.mode}")
             
             # Make prediction
             pred_proba, pred_class = load_model_and_predict(resized_img, version=version)
