@@ -8,6 +8,8 @@ This app was developed as part of the Diploma in Full Stack Development with Pre
 
 The live app can be accessed on streamlit cloud [here](https://cherry-mildew-detector-yk8tvuvywdewixijqpatlv.streamlit.app/) or on render [here](https://cherry-mildew-detector.onrender.com/)
 
+We recommend accessing app on streamlit cloud if available as it has faster response and loading speeds.
+
 ## Dataset Content
 
 The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). 
@@ -18,6 +20,30 @@ Code Institute then created a fictitious user story for the dataset where predic
 ## Business Requirements
 
 The cherry plantation crop from Farmy & Foods is facing a challenge where their cherry plantations have been presenting powdery mildew. This infection can damage their cherry crops and result in significant loss in revenue. They are looking for a way to improve their monitoring and response to the occurrence of powdery mildew.
+
+1. The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
+2. The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+
+## Hypothesis and how to validate?
+
+Mildew infected leaves will have clear signs of white mildew that can differentiate them from a healthy leaf.
+- Can be addressed with DL model to predict health status of leaf from leaf image(s)
+
+Dataset is too small and model performance and accuracy of prediction will be negatively impacted.
+- Can be addressed through augmentation of training dataset to increase sample size.
+
+Mildew infection is not as easily distinguished from healthy leaves on low resolution images
+- Can be addressed by comparing DL model performance between images with different image shape (resolution) using multiple .pkl files
+
+Visual differentiation of healthy and infected leaves can be improved by aligning leaf images in the same orientation prior to carrying out study.
+- Can be addressed by comparing Average Image, Variability Image and Difference between Averages studies before and after orientation adjustment of images.
+
+
+## The rationale to map the business requirements to the Data Visualisations and ML tasks
+
+- List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+
+## ML Business Case
 
 
 #### Powdery Mildew
@@ -36,31 +62,6 @@ The company has thousands of cherry trees located on multiple farms across the c
 To save time in this process, the IT team suggested an ML system that detects instantly, using a leaf tree image, if it is healthy or has powdery mildew. This would significantly reduce total time to monitor and treat each tree, making large-scale implementation of this process across all farms a realistic possibility.
 
 This study will also act as a pilot. Presently,  similar manual processes are in place for detecting pests on other crops grown by Farmy & Foods. If this initiative is successful, there is a realistic chance to replicate this project for all other crops. 
-
-1. The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
-2. The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
-
-## Hypothesis and how to validate?
-
-Mildew infected leaves will have clear signs of white mildew that can differentiate them from a healthy leaf.
-- Can be addressed with DL model to predict health status of leaf from leaf image(s)
-
-Dataset is too small and model performance and accuracy of prediction will be negatively impacted.
-- Can be addressed through augmentation of training dataset to increase sample size.
-
-
-Mildew infection is not as easily distinguished from healthy leaves on low resolution images
-- Can be addressed by comparing DL model performance between images with different image shape (resolution) using multiple .pkl files
-
-Visual differentiation of healthy and infected leaves can be improved by aligning leaf images in the same orientation prior to carrying out study.
-- Can be addressed by comparing Average Image, Variability Image and Difference between Averages studies before and after orientation adjustment of images.
-
-
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
-
-- List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
-
-## ML Business Case
 
 - In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
 
