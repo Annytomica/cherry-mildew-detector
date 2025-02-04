@@ -114,14 +114,57 @@ It will answer business requirements 1
 ## Bugs
 
 ### Fixed
-- Comment edit submitting new comment not changing old.
+- Repo to large for deployment on Heroku
 
 **Description:**
-The submit process for edit not working and commentForm attribute not being assigned to allow submission of change. Is submitted as a new comment.
+The slug size limit of 500MB for Heroku was exceeded when deploying an empty page streamlit app
 **Resolution:**
-Found typo in submitButton single_article.html, but major issue was that the Abstract Id of contactForm was conflicting with the commentForm Id that needed to be identified to setAttribute of action="edit_comment" to change button action from submit to edit. The contactForm Id was removed to resolve.
+Downgraded streamlit from V1.41.0 to V1.40.2 which saved 14.89MB in space. This only just brought slug size below 500MB so to future protect issues when app contains model switched deployment to Render and Streamlit cloud.
+
+- np .append() deprecated
+
+**Description:**
+In original code from malaria walkthough project the function for plotting labels distribution used .append(). This was carried over when the function was used in this project.
+**Resolution:**
+ChatGPT was used to help diagnose the bug and refactor the code so that .append() was no longer required.
+
+- not able to push to repo after model tuning
+
+**Description:**
+After model tunig using keras-tuner the tuning files were too large to push to the repo. Using git reset --soft and --hard did not work and put source control into an eternal update loop that never ended.
+**Resolution:**
+Downloaded the notebook, best paramaters .csv and tuning files and created a new workspace in gitpod. Did not reload tuning files, instead manually defined model using best model hyperparameters identified from training. Notebook and .csv were uploaded and pushed to repo successfully.
+
+- fail to push first model to repo
+
+**Description:**
+After model training could not push to repo as saved model (V1) was too large (~160MB). Using git reset --soft and --hard did not work and put source control into an eternal update loop that never ended.
+**Resolution:**
+Using git reset --soft to remove problematic commit and installed Git LArge File Storage to allow model to be pushed to repo.
+
+- V1 model preventing deployment
+
+**Description:**
+Having v1 saved in repo made total slug size too large once v5 model was also present and prevented deployment.
+**Resolution:**
+Downloaded and saved model and deleted from repo so only v5 model (11.6MB), which was being used for streamlit app, present in repo.
+
+- multiple toggles on app page prevent page loading
+
+**Description:**
+Inserting 4 toggles on data visualisation page prevented page from loading when running app and produced an error message from streamlit saying toggles required unique key.
+**Resolution:**
+Followed guiudance from streamlit error message and added unique keys to each toggle.
+
+- Toggles on visualisation page reset montage to dafault
+
+**Description:**
+Using toggles on data visualisation page causes the page to reload. If a new montage had been generated it was lost, with the montage reverting back to the default image.
+**Resolution:**
+Used ChatGPT to troubleshoot and refactor montage code to use st.session-state to store the generated montage so that it is not lost when page reloads after toggle activation.
 
 **Neutral Resolution**
+App deployed to render is very slow to load pages and features and respond to requests. There is no fix for this. Instead the recommendation is to use the app deployed on Streamlit Cloud as it is faster and more responsive.
 
 ### Unfixed
 **All bugs detected have been resolved**
