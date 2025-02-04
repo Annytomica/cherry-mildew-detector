@@ -241,18 +241,21 @@ I would also like to note that this app was developed during a period where I wa
 
 ## Content
 ### Large contributions
-- [CI Blog walkthrough project](https://github.com/Annytomica/django-blog-walkthrough):
-    - Basic code for setting up Django projects and apps
-    - all wireups for views, models, urls were adapted from the course code with significant generic code retained
-    - deployment to Heroku
+- [CI Mildew project template repo](https://github.com/Code-Institute-Solutions/milestone-project-mildew-detection-in-cherry-leaves):
+    - Basic code for setup and deployment including requirements.txt, Profile and setup.sh
+    - jupyter notebook template
+    - Readme template with intial dataset content and business requirements sections.
+- [CI Malaria walkthrough project](https://github.com/Annytomica/WalkthroughProject01):
+    - Basic code for setting up multipage streamlit apps
+    - basic structure of all notebooks and dashboard pages
+    - 
     - third-party wireups such as Cloudinary, summernote etc used same versions as used in walkthrough to ensure they connected correctly with Heroku etc.
-- The free Abstract boostrap template from [StyleShout](https://styleshout.com/abstract-modern-masonry-blog-website-template/) for providing all styling html, css and js to create a responsive masonary-brick based site. StyleShout is acknowledged in footer as per usage requirement.
 
 - [ChatGPT](https://chatgpt.com):
     - typo identification
     - troubleshooting
-    - optimising logic for like functions
-    - correcting like/comments view to remove clash of submission (see bug report)
+    - optimising logic and refactoring code from walkthrough projects to suit this project
+    - using st.session_state
     - displaying article like and comment counts on homepage
     - fixing cloudinary http bug
     - automated testing of difficult or novel features
