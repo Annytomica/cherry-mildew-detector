@@ -177,32 +177,33 @@ App deployed to render is very slow to load pages and features and respond to re
 **All bugs detected have been resolved**
 
 ## Deployment
+** The app is too large for deployment on Heroku, exceeding the 500MB slug-size limit. As such it ws deployed onto Render and Streamlit Cloud.
 
 ### Render
 
-- The App live link is: `https://YOUR_APP_NAME.herokuapp.com/`
-- Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-- The project was deployed to Heroku using the following steps.
+- The App live link is: `https://cherry-mildew-detector.onrender.com/`
+- Before starting, ensure your requirements.txt file is up to date.
+- The project was deployed to Render using the following steps:
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
+1. Log in to Render using your GitHub credentials and create a user profile.
+2. Create an new App
+2. Link the app to your GitHUb repository using the interface provided.
 4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the .slugignore file.
+5. The deployment process should happen automatically if all deployment files are fully functional. 
+6. Once the repo is loaded click the link on the top of the page to access your App. The app will automatically redeploy with every new commit to repo.
 
-### Streamlit community cloud
+### Streamlit Cloud
 
-- The App live link is: `https://YOUR_APP_NAME.herokuapp.com/`
-- Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-- The project was deployed to Heroku using the following steps.
+- The App live link is: `https://cherry-mildew-detector-yk8tvuvywdewixijqpatlv.streamlit.app/`
+- Before starting, ensure your requirements.txt file is up to date.
+- The project was deployed to Streamlit using the following steps:
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
+1. Log in to Streamlit Cloud using your GitHub credentials and create a user profile.
+2. Create an new App
+2. Link the app to your GitHUb repository using the interface provided.
 4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the .slugignore file.
+5. The deployment process should happen automatically if all deployment files are fully functional. 
+6. Once the repo is loaded click the link on the top of the page to access your App. The app will automatically redeploy with every new commit to repo.
 
 If you wish to develop this app further, feel free. To do this, create a fork of this repository and save it to your own github profile. To do this, use the fork button at the top right of this repository. This brings you to a new window, where you select yourself as the owner and can add extra details to name and description of the repo. You will then, if required, deploy to your own Heroku account using the process described above. You will also need to generate you own env.py and Heroku config var values to ensure all featuires will work. If you chose to do this, please be respectful and credit me as the origin of this project and code.
 
