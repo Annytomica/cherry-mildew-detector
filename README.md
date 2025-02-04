@@ -163,6 +163,13 @@ Using toggles on data visualisation page causes the page to reload. If a new mon
 **Resolution:**
 Used ChatGPT to troubleshoot and refactor montage code to use st.session-state to store the generated montage so that it is not lost when page reloads after toggle activation.
 
+- Confusion matrix does not assign scores to labels correctly
+
+**Description:**
+Output from confusion matrix and classification report conflict with model accuracy evaluation. The output is evenly split between correct and wrong suggesting there may be random label associations.
+**Resolution:**
+desertnaut's [response](https://stackoverflow.com/questions/48908641/how-to-get-a-single-value-from-softmax-instead-of-probability-get-confusion-ma) to a similar issue posted on stack overflow highlighted that 'shuffle' needed to be set to False (default is true) when loading test dataset with .flow-from-directory()
+
 **Neutral Resolution**
 App deployed to render is very slow to load pages and features and respond to requests. There is no fix for this. Instead the recommendation is to use the app deployed on Streamlit Cloud as it is faster and more responsive.
 
