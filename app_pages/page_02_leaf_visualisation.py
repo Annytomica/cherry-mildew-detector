@@ -67,12 +67,12 @@ def page_leaf_visualisation_body():
     if four:
         st.subheader("Conclusions")
         st.write('''
-        The image montage showed there were clear visual differences between healthy 
-        and mildew infected leaves. However, these differences were not born out by 
-        the average, variability and difference measures. Our conclusion is that while 
-        leaf health status can be visually distinguished, these measures were negatively 
-        impacted by cherry leaves having a very distinct, non-circular shape and leaf 
-        orientation not being uniform in the images. A future goal would be to 
-        investigate if outcomes could be improved if leaves were rotated to uniform 
-        orientation prior to analysis.
+        Business requirement 1 is fulfilled. The image montage showed there were clear 
+        visual differences between healthy and mildew infected leaves. However, these 
+        differences were not born out by the average, variability and difference 
+        measures. Our conclusion is that while leaf health status can be visually 
+        distinguished, these measures were negatively impacted by cherry leaves having 
+        a very distinct, non-circular shape and leaf orientation not being uniform in 
+        the images. A future goal would be to investigate if outcomes could be improved 
+        if leaves were rotated to uniform orientation prior to analysis.
         ''')
