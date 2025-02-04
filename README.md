@@ -12,7 +12,7 @@ We recommend accessing app on streamlit cloud if available as it has faster resp
 
 ## Dataset Content
 
-The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). 
+The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). The dataset consists of XXX .jpeg images, split evenly between 'healthy' and 'powdery_mildew' classes. All images are 256px x 256px.
 
 Code Institute then created a fictitious user story for the dataset where predictive analytics can be applied in a real project in the workplace:
 - The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
@@ -41,7 +41,16 @@ Visual differentiation of healthy and infected leaves can be improved by alignin
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
-- List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+#### Business Requirement 1: Data Visualization
+
+- We will display an image montage for comparision of healthy and mildew infected cherry leaves.
+- We will display the "average"(mean) and "variation"(standard deviation) images for healthy and mildew infected cherry leaves.
+- We will display the difference between average healthy and mildew infected cherry leaves.
+
+#### Business Requirement 2: Classification
+
+- We want to predict if a given leaf is infected or not with powdery mildew.
+- We want to build a binary classifier and generate reports.
 
 ## ML Business Case
 
