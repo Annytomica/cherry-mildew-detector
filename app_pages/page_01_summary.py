@@ -19,7 +19,7 @@ def page_summary_body():
     powdery-mildew infected cherry leaves taken from their cherry farms.
 
 
-    For additional information, please visit and **read** the 
+    For additional information on the project and dataset, please visit and **read** the 
     [Project README file](https://github.com/Annytomica/cherry-mildew-detector).
     ''')
     st.subheader('Business Requirements')
