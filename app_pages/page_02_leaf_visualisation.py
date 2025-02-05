@@ -12,6 +12,14 @@ from src.data_visualisation.visualisation import (
                                                 generate_thumbnail_montage,
                                                 )
 
+# Define paths for montage functions
+default_montage_path = "outputs/v1/thumbnail_montage.png"
+montage_dir = "inputs/datasets/montage"
+
+# Initialize session state for montage if not set
+if "current_montage" not in st.session_state:
+    st.session_state["current_montage"] = default_montage_path
+
 # main body content - four toggles for displaying plots
 def page_leaf_visualisation_body():
     st.title('Cherry Leaf Data Visualisation')

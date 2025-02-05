@@ -178,6 +178,13 @@ Output from confusion matrix and classification report conflict with model accur
 **Resolution:**
 desertnaut's [response](https://stackoverflow.com/questions/48908641/how-to-get-a-single-value-from-softmax-instead-of-probability-get-confusion-ma) to a similar issue posted on stack overflow highlighted that 'shuffle' needed to be set to False (default is True) when loading test dataset with .flow-from-directory()
 
+- montage does not load and gives key error
+
+**Description:**
+After reboot on deployed app, if app is returned to for second time cannot load montage and get KeyError: 'st.session_state has no key "current_montage"
+**Resolution:**
+Put directory paths and initial session.state statement back into leaf visualisation page as well as leaving in visualisation.py where it had been moved during code refactoring.
+
 **Neutral Resolution**
 App deployed to render is very slow to load pages and features and respond to requests. There is no fix for this. Instead the recommendation is to use the app deployed on Streamlit Cloud as it is faster and more responsive.
 
