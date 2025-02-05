@@ -8,7 +8,7 @@ This app was developed as part of the Diploma in Full Stack Development with Pre
 
 The live app can be accessed on streamlit cloud [here](https://cherry-mildew-detector-yk8tvuvywdewixijqpatlv.streamlit.app/) or on render [here](https://cherry-mildew-detector.onrender.com/)
 
-We recommend accessing app on streamlit cloud if available as it has faster response and loading speeds.
+We recommend accessing app on streamlit cloud if available as it has faster response and loading speeds. Access app on render if using firefox browser.
 
 ## Dataset Content
 
@@ -183,10 +183,11 @@ desertnaut's [response](https://stackoverflow.com/questions/48908641/how-to-get-
 **Description:**
 After reboot on deployed app, if app is returned to for second time cannot load montage and get KeyError: 'st.session_state has no key "current_montage"
 **Resolution:**
-Put directory paths and initial session.state statement back into leaf visualisation page as well as leaving in visualisation.py where it had been moved during code refactoring.
+Put directory paths and initial session.state statement back into leaf visualisation page as well as leaving in visualisation.py where it had been moved during code refactoring. Moved session state default statement to within montage function in visualisation.py. CHatGPT was used to troubleshoot this fix.
 
 **Neutral Resolution**
-App deployed to render is very slow to load pages and features and respond to requests. There is no fix for this. Instead the recommendation is to use the app deployed on Streamlit Cloud as it is faster and more responsive.
+- App deployed to render is very slow to load pages and features and respond to requests. There is no fix for this. Instead the recommendation is to use the app deployed on Streamlit Cloud as it is faster and more responsive.
+- config.toml file for custom theme does not load on firefox browser for streamlit cloud deployed app. Is fine for Render deployed app. As this does not impact app functions no fix was enacted, just recommendation to use render deployed app if using firefox browser.
 
 ### Unfixed
 **All bugs detected have been resolved**
