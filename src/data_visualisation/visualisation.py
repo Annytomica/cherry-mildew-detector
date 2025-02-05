@@ -14,16 +14,16 @@ import io
 default_montage_path = "outputs/v1/thumbnail_montage.png"
 montage_dir = "inputs/datasets/montage"
 
-# Initialize session state for montage if not set
-if "current_montage" not in st.session_state:
-    st.session_state["current_montage"] = default_montage_path
-
 # Function to display the thumbnail montage
 def display_thumbnail_montage():
     # Load and check default montage
     if not os.path.exists(default_montage_path):
         st.error("Default montage not found. Please check the file path.")
         return
+    
+    # Initialize session state for montage if not set
+    if "current_montage" not in st.session_state:
+        st.session_state["current_montage"] = default_montage_path
 
     # Placeholder for the montage
     montage_placeholder = st.empty()
