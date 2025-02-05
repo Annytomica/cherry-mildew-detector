@@ -26,16 +26,16 @@ The cherry plantation crop from Farmy & Foods is facing a challenge where their 
 
 ## Hypothesis and how to validate?
 
-Mildew infected leaves will have clear signs of white mildew that can differentiate them from a healthy leaf.
+**Mildew infected leaves will have clear signs of white mildew that can differentiate them from a healthy leaf.**
 - Can be addressed with DL model to predict health status of leaf from leaf image(s)
 
-Dataset is too small and model performance and accuracy of prediction will be negatively impacted.
+**Dataset is too small and model performance and accuracy of prediction will be negatively impacted.**
 - Can be addressed through augmentation of training dataset to increase sample size.
 
-Mildew infection is not as easily distinguished from healthy leaves on low resolution images
+**Mildew infection is not as easily distinguished from healthy leaves on low resolution images**
 - Can be addressed by comparing DL model performance between images with different image shape (resolution) using multiple .pkl files
 
-Visual differentiation of healthy and infected leaves can be improved by aligning leaf images in the same orientation prior to carrying out study.
+**Visual differentiation of healthy and infected leaves can be improved by aligning leaf images in the same orientation prior to carrying out study.**
 - Can be addressed by comparing Average Image, Variability Image and Difference between Averages studies before and after orientation adjustment of images.
 
 
@@ -50,7 +50,7 @@ Visual differentiation of healthy and infected leaves can be improved by alignin
 #### Business Requirement 2: Classification
 
 - We want to predict if a given leaf is infected or not with powdery mildew.
-- We want to build a binary classifier and generate reports.
+- We want to build a binary classifier (CNN model) and generate reports.
 
 ## ML Business Case
 
@@ -74,7 +74,7 @@ Visual differentiation of healthy and infected leaves can be improved by alignin
 
 ### Page 1: Quick Project Summary
 - General Information
-    - Powdery mildew is an infection caused by the fungus Podosphaera clandestina. It presents as white powdery patches on new or young leaves, with growth typically starting on the underside of the leaf. 
+    - Powdery mildew is an infection caused by the fungus *Podosphaera clandestina*. It presents as white powdery patches on new or young leaves, with growth typically starting on the underside of the leaf. 
     - Multiple cherry leaves are collected and visually inspected manually. Visual criteria are used to detect mildew infection. The inspection process takes 30 minutes per tree.
     - The infection will not kill the leaf but can cause distortion and discolouration. This infection can be transferred to the cherry fruit as they mature, causing damage and losses to the cherry crop.
 - Project Dataset
@@ -122,7 +122,7 @@ Visual differentiation of healthy and infected leaves can be improved by alignin
 ## Bugs
 
 ### Fixed
-- Repo to large for deployment on Heroku
+- Repo too large for deployment on Heroku
 
 **Description:**
 The slug size limit of 500MB for Heroku was exceeded when deploying an empty page streamlit app
@@ -139,16 +139,16 @@ ChatGPT was used to help diagnose the bug and refactor the code so that .append(
 - not able to push to repo after model tuning
 
 **Description:**
-After model tunig using keras-tuner the tuning files were too large to push to the repo. Using git reset --soft and --hard did not work and put source control into an eternal update loop that never ended.
+After model tuning using keras-tuner the tuning files were too large to push to the repo. Using git reset --soft and --hard did not work and put source control into an eternal update loop that never ended.
 **Resolution:**
 Downloaded the notebook, best paramaters .csv and tuning files and created a new workspace in gitpod. Did not reload tuning files, instead manually defined model using best model hyperparameters identified from training. Notebook and .csv were uploaded and pushed to repo successfully.
 
 - fail to push first model to repo
 
 **Description:**
-After model training could not push to repo as saved model (V1) was too large (~160MB). Using git reset --soft and --hard did not work and put source control into an eternal update loop that never ended.
+After model training could not push to repo as saved model (V1) was too large (~160MB). 
 **Resolution:**
-Using git reset --soft to remove problematic commit and installed Git LArge File Storage to allow model to be pushed to repo.
+Using git reset --soft to remove problematic commit and installed Git Large File Storage to allow model to be pushed to repo.
 
 - V1 model preventing deployment
 
@@ -162,9 +162,9 @@ Downloaded and saved model and deleted from repo so only v5 model (11.6MB), whic
 **Description:**
 Inserting 4 toggles on data visualisation page prevented page from loading when running app and produced an error message from streamlit saying toggles required unique key.
 **Resolution:**
-Followed guiudance from streamlit error message and added unique keys to each toggle.
+Followed guidance from streamlit error message and added unique keys to each toggle.
 
-- Toggles on visualisation page reset montage to dafault
+- Toggles on visualisation page reset montage to default
 
 **Description:**
 Using toggles on data visualisation page causes the page to reload. If a new montage had been generated it was lost, with the montage reverting back to the default image.
@@ -176,7 +176,7 @@ Used ChatGPT to troubleshoot and refactor montage code to use st.session-state t
 **Description:**
 Output from confusion matrix and classification report conflict with model accuracy evaluation. The output is evenly split between correct and wrong suggesting there may be random label associations.
 **Resolution:**
-desertnaut's [response](https://stackoverflow.com/questions/48908641/how-to-get-a-single-value-from-softmax-instead-of-probability-get-confusion-ma) to a similar issue posted on stack overflow highlighted that 'shuffle' needed to be set to False (default is true) when loading test dataset with .flow-from-directory()
+desertnaut's [response](https://stackoverflow.com/questions/48908641/how-to-get-a-single-value-from-softmax-instead-of-probability-get-confusion-ma) to a similar issue posted on stack overflow highlighted that 'shuffle' needed to be set to False (default is True) when loading test dataset with .flow-from-directory()
 
 **Neutral Resolution**
 App deployed to render is very slow to load pages and features and respond to requests. There is no fix for this. Instead the recommendation is to use the app deployed on Streamlit Cloud as it is faster and more responsive.
@@ -185,7 +185,7 @@ App deployed to render is very slow to load pages and features and respond to re
 **All bugs detected have been resolved**
 
 ## Deployment
-**The app is too large for deployment on Heroku, exceeding the 500MB slug-size limit. As such it ws deployed onto Render and Streamlit Cloud.**
+**The app is too large for deployment on Heroku, exceeding the 500MB slug-size limit. As such it was deployed on Render and Streamlit Cloud.**
 
 ### Render
 
@@ -213,7 +213,7 @@ App deployed to render is very slow to load pages and features and respond to re
 5. The deployment process should happen automatically if all deployment files are fully functional. 
 6. Once the repo is loaded click the link on the top of the page to access your App. The app will automatically redeploy with every new commit to repo.
 
-If you wish to develop this app further, feel free. To do this, create a fork of this repository and save it to your own github profile. To do this, use the fork button at the top right of this repository. This brings you to a new window, where you select yourself as the owner and can add extra details to name and description of the repo. You will then, if required, deploy to your own Heroku account using the process described above. You will also need to generate you own env.py and Heroku config var values to ensure all featuires will work. If you chose to do this, please be respectful and credit me as the origin of this project and code.
+If you wish to develop this app further, feel free. To do this, create a fork of this repository and save it to your own github profile. To do this, use the fork button at the top right of this repository. This brings you to a new window, where you select yourself as the owner and can add extra details to name and description of the repo. You will then, if required, deploy to your own Heroku/Render/Streamlit Cloud account using the process described above. If you chose to do this, please be respectful and credit me as the origin of this project and code.
 
 ![GitHub language count](https://img.shields.io/github/languages/count/Annytomica/cherry-mildew-detector)
 ![GitHub top language](https://img.shields.io/github/languages/top/Annytomica/cherry-mildew-detector?color=yellow)
@@ -253,6 +253,7 @@ I would also like to note that this app was developed during a period where I wa
     - Basic code for setup and deployment including requirements.txt, Profile and setup.sh
     - jupyter notebook template
     - Readme template with intial dataset content and business requirements sections.
+
 - [CI Malaria walkthrough project](https://github.com/Annytomica/WalkthroughProject01):
     - Basic code for setting up multipage streamlit apps
     - basic structure of all notebooks and dashboard pages
