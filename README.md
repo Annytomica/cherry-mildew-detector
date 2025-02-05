@@ -66,6 +66,12 @@ Visual differentiation of healthy and infected leaves can be improved by alignin
 
 ## Dashboard Design
 
+### General Styling
+- a logo, in small and large format, was designed for the sidebar
+- a hero image for the project summary page was designed
+- a custom colour theme was developed
+- custom styling, including use of Google fonts, was implemented with css
+
 ### Page 1: Quick Project Summary
 - General Information
     - Powdery mildew is an infection caused by the fungus Podosphaera clandestina. It presents as white powdery patches on new or young leaves, with growth typically starting on the underside of the leaf. 
@@ -79,7 +85,9 @@ Visual differentiation of healthy and infected leaves can be improved by alignin
     - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
 ### Page 2: Cherry Leaf Visualisation
-It will answer business requirements 1
+- General information including:
+    - Answers business requirement 1 - "TThe client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew."
+    - description of page content
 - Toggle 1 - Image Montage
 - Toggle 2 - Average image and image variability for healthy and mildew infected classes
 - Toggle 3 - Differences between the average images from healthy and mildew infected
@@ -221,7 +229,7 @@ If you wish to develop this app further, feel free. To do this, create a fork of
 - **pandas**: Examples of use include handling dataframes, evaluation reports and structuring prediction probabilities.
 - **matplotlib**: Examples of use include creating the montage layout, saving plots as images and creating fugures with mutliple plots.
 - **seaborn**: For enhanced plot visualisation, such as model training history accuracy and losses line plots, label frequency bar plots
-- **Pillow**: Used for image processing such as resizing, retrieving image properties and image uploading.
+- **pillow**: Used for image processing such as resizing, retrieving image properties and image uploading.
 - **joblib**: Examples of use include loading and saving .pkl files.
 - **scikit-learn**: Examples of use include model evaluation such as confusion matrix and classification report.
 - **tensorflow.keras**: Used for building training and testing models and making predictions using model.
